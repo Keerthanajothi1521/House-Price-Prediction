@@ -25,15 +25,11 @@ Price: Target variable (house price).
 
 Methodology
 Data Preprocessing:
-
 Checked for missing values and standardized features using StandardScaler.
-
 Split the data into training and testing sets (80% train, 20% test).
-
 Model Training:
 Used LinearRegression from sklearn to train the model.
 Evaluated feature importance through regression coefficients.
-
 Model Evaluation:
 Calculated R-squared and MSE to measure predictive accuracy.
 Generated visualizations (actual vs. predicted prices, residual plots) to validate assumptions.
