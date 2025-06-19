@@ -1,1 +1,22 @@
+Discussion of Results
+1. Model Performance
+R² Score (0.7489): The model explains 74.89% of the variance in house prices, indicating a moderately strong fit.
+Mean Squared Error (20.39): The average prediction error is approximately $4.51 (√20.39), which is reasonable 
+given the price range (dataset mean: $22.7K, range: $5K–$50K).
+Interpretation:
+The model performs well but could benefit from feature engineering or hyperparameter tuning to improve accuracy.
+Potential underfitting: If the dataset has non-linear relationships, consider polynomial features or tree-based 
+models (e.g., Random Forest).
+
+2. Key Influencing Features
+Feature	Coefficient	Impact on Price
+DisadvantagedPosition	-4.58	Strongest negative effect
+Rooms	+2.48	Strongest positive effect
+Distance	-2.97	Prices drop farther from key locations
+Accessibility	+2.33	Better access raises prices
+
+3. Conclusion
+This linear regression model provides a solid baseline for house price prediction, identifying economically 
+intuitive drivers. Future work should address multicollinearity and explore advanced modeling techniques for higher accuracy.
+
 
