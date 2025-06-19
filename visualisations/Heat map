@@ -1,1 +1,5 @@
-
+plt.figure(figsize=(12, 10))
+sns.heatmap(data.corr(), annot=True, cmap='coolwarm', fmt='.2f', 
+linewidths=0.5)
+plt.title('Correlation Heatmap of Features')
+plt.show()
