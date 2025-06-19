@@ -1,0 +1,36 @@
+fig, axs = plt.subplots(3, 2, figsize=(16, 16))
+
+# Correlation Heatmap
+sns.heatmap(data.corr(), annot=False, cmap='coolwarm', ax=axs[0, 0])
+axs[0, 0].set_title('Correlation Heatmap')
+
+# Distribution of House Prices
+sns.histplot(data['Price'], kde=True, bins=30, color='blue', ax=axs[0, 1])
+axs[0, 1].set_title('Distribution of House Prices')
+
+# Bar plot for VIF
+sns.barplot(x='VIF', y='Feature', data=vif_data, palette='viridis', ax=axs[1, 0])
+axs[1, 0].set_title('Variance Inflation Factor')
+
+# Coefficients
+sns.barplot(x='Coefficient', y='Feature', data=coefficients, palette='coolwarm', ax=axs[1, 1])
+axs[1, 1].set_title('Feature Importance')
+
+# Actual vs Predicted
+axs[2, 0].scatter(y_test, y_pred, alpha=0.7, color='green')
+axs[2, 0].plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2)
+axs[2, 0].set_title('Actual vs Predicted Prices')
+axs[2, 0].set_xlabel('Actual Prices')
+axs[2, 0].set_ylabel('Predicted Prices')
+
+# Residual Plot
+residuals = y_test - y_pred
+axs[2, 1].scatter(y_pred, residuals, alpha=0.7, color='red')
+axs[2, 1].axhline(0, color='black', linestyle='--', linewidth=2)
+axs[2, 1].set_title('Residuals vs Predicted Prices')
+axs[2, 1].set_xlabel('Predicted Prices')
+axs[2, 1].set_ylabel('Residuals')
+
+plt.tight_layout()
+plt.show()
+
